@@ -8,9 +8,7 @@
 <body>
 	<?php
 	$ma = $_GET['ma'];
-		$ket_noi = mysqli_connect('localhost','root','','j2school');
-
-		mysqli_set_charset($ket_noi,'utf8');
+		include 'Connect.php';
 
 		$sql = "select tieu_de from tin_tuc where ma = $ma";
 		//die($sql);
