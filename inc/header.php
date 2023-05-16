@@ -48,16 +48,14 @@
                     </a>
                     <?php
                         if(isset($_SESSION['idnguoidung'])){  
-                            $sql_name = "SELECT * FROM tbnguoidung where idnguoidung='$_SESSION[idnguoidung]'";
-                            $query_name = mysqli_query($conn, $sql_name);
-                            $row_name = mysqli_fetch_array($query_name);
                             
                     ?>                   
                     <a href="index.php?quanly=quanlythongtincanhan" class="flex navbar__links-items navbar__link-text"> 
                         <div class="account-icon" style="margin-right:5px;">
                             <i class="fas fa-user-circle"></i>
                         </div>
-                        <?php echo $row_name['fullname'] ?>
+                        <?php echo $_SESSION['dangnhap'] ?>
+
                     </a>                   
                     <a href="index.php?login=dangxuat" class="navbar__links-items navbar__link-text"> 
                         Đăng xuất
@@ -101,28 +99,28 @@
                         </form>
                         <div class="shopee__search-bar-text">
                             <a class="search-bar-text" href="">
-                                Áo Khoác
+                                Điện thoại
                             </a>
                             <a class="search-bar-text" href="">
-                                Bông Tẩy Trang
+                                Máy tính bảng
                             </a>
                             <a class="search-bar-text" href="">
-                                Bánh Trung Thu
+                                Laptop
                             </a>
                             <a class="search-bar-text" href="">
                                 Tai Nghe
                             </a>
                             <a class="search-bar-text" href="">
-                                Váy
+                                PC
                             </a>
                             <a class="search-bar-text" href="">
-                                Quần
+                                Tai nghe
                             </a>
                             <a class="search-bar-text" href="">
                                 Balo
                             </a>
                             <a class="search-bar-text" href="">
-                                Nồi Chiên Không Dầu
+                                Bàn phím
                             </a>
                         </div>
                     </div>

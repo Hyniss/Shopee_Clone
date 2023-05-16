@@ -8,18 +8,18 @@
         //tk ko de trong
             echo'<script>alert("Tài khoản không được để trống !")</script>';  
         }else{
-            $sql = "SELECT * FROM user WHERE userName ='".$taikhoan."' AND password = '".$matkhau."' limit 1";
+            $sql = "SELECT * FROM user WHERE userName ='".$taikhoan."' AND password = '".$matkhau."'AND role = 0 limit 1";
             $query = mysqli_query($conn,$sql);
             $count = mysqli_num_rows($query);
             $row_login = mysqli_fetch_array($query);
             if($count >0){  
-                 $_SESSION['dangnhap'] = $row_login['fullname'];
+                 $_SESSION['dangnhap'] = $row_login['fullName'];
+                 
                 $_SESSION['idnguoidung'] = $row_login['id'];  
-                if($row_login['role'] == 0){      
-                   header("Location:user.php");
-                }else{
-                    header("Location:admin.php");
-                }               
+                  
+                   header("Location:index.php");
+                
+                              
             }else{ 
                 echo'<script>alert("Tài khoản đăng nhập không đúng !")</script>';    
             }
