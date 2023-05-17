@@ -38,9 +38,7 @@
                                         WHERE id = '$id' "; 
            
         }
-        mysqli_query($conn, $sql_xuly_profile);
-
-
+        $row = mysqli_query($conn, $sql_xuly_profile);
     }
 ?>
  <?php

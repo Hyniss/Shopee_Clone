@@ -4,7 +4,7 @@
     }else{
         $id='' ;
     }
-    $sql_chitiet = "SELECT * FROM product WHERE id = id LIMIT 1";
+    $sql_chitiet = "SELECT * FROM product WHERE id = $id LIMIT 1";
     $query_chitiet = mysqli_query($conn,$sql_chitiet);
 ?>
 <?php
@@ -53,17 +53,18 @@
                     <div class="shopee-color__text"> Màu sắc </div>
                     <button class=" product-variation"><?php echo $row_chitiet['color']?></button>
                 </div>
+                <form action="./inc/giohang/xuly.php" method="post">
                 <div class="flex shopee-quantity ">
                     <div class="shopee-quantity-text">Số lượng</div>
                     <div class="flex ">
                         <div  class=" shopee-input">
                             <div class=" flex shopee-input-quantity">
-                                <button class="shopee-input-quantity__btn">
-                                    <i class="fas fa-minus"></i>
+                                <button  class="shopee-input-minus-quantity__btn">
+                                    <i class="fa fa-minus"></i>
                                 </button>
-                                <input class="quantity" type="text" role="spinbutton" aria-valuenow="1" value="1" />
-                                <button class="shopee-input-quantity__btn"> 
-                                    <i class="fas fa-plus"></i>
+                                <input class="quantity" type="text" name="soluong" value="2" />
+                                <button class="shopee-input-plus-quantity__btn"> 
+                                    <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
@@ -73,13 +74,12 @@
                         </div>
                     </div>
                 </div>
-                <form action="./inc/giohang/xuly.php" method="post">
+                
                     <div class="flex shopee-cart">
                         <input type="hidden" name="idsanpham" value="<?php echo $row_chitiet['id']?>">
                         <input type="hidden" name="tensanpham" value="<?php echo $row_chitiet['nameProduct']?>">
                         <input type="hidden" name="anhsanpham" value="<?php echo $row_chitiet['img']?>">
                         <input type="hidden" name="mausac" value="<?php echo $row_chitiet['color']?>">
-                        <input type="hidden" name="soluong" value="1">
                         <input type="hidden" name="gia" value="<?php echo $row_chitiet['price']?>">
                         <button class="flex shopee-cart__giohang" onclick="add_cart()" name="themgiohang">
                             <i class="fas fa-cart-plus" style="font-size:2rem;padding-left:12px"></i>
@@ -109,6 +109,24 @@
     
     </div>
 </div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('.shopee-input-minus-quantity__btn').click(function () {
+                var $input = $(this).parent().find('input');
+                var count = parseInt($input.val()) - 1;
+                count = count < 1 ? 1 : count;
+                $input.val(count);
+                $input.change();
+                return false;
+            });
+            $('.shopee-input-plus-quantity__btn').click(function () {
+                var $input = $(this).parent().find('input');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+            });
+        });
+</script>
 <?php 
     }
 ?>
