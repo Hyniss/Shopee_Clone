@@ -230,3 +230,34 @@
     font-size : 1.4rem;
     padding: 20px 15px;
 }
+.shopee-input-minus-quantity__btn{
+    font-size:1.4rem;
+    color: #757575;
+    cursor: pointer;
+    width: 3.2rem;
+    height: 3.4rem;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.09);
+    background: #fff;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+    
+}
+.shopee-input-plus-quantity__btn{
+    font-size:1.4rem;
+    color: #757575;
+    cursor: pointer;
+    width: 3.2rem;
+    height: 3.4rem;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.09);
+    background: #fff;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+}

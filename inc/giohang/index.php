@@ -18,7 +18,7 @@
                             <th>Màu sắc</th>
                             <th>Số lượng</th>
                             <th>Giá</th>
-                            <th>Giá tổng</th>
+                            <th>Tạm Tính</th>
                             <th style="text-align: center;">Chức năng</th>
                         </tr>
                     </thead>
@@ -42,8 +42,16 @@
                             </td>
                             <td><?php echo $each['color']?></td>
                             <td>
+                                <a href="./inc/giohang/update_quantity_in_cart.php?id=<?php echo $id ?>&type=decre" >
+                                  
+                                    <i class="fa fa-minus"></i>
+                                   
+                                </a>
                                 <input type="number" min="1" class="quantity" name="soluong" value="<?php echo $each['quantity']?>" />
                                 <input type="hidden" name="product_id" value="<?php echo $id?>" />
+                                <a href="./inc/giohang/update_quantity_in_cart.php?id=<?php echo $id ?>&type=incre">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             </td>
                             <td>
                                 <?php echo number_format($each['price'],0,',','.')?>
