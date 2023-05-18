@@ -48,7 +48,6 @@
                                    
                                 </a>
                                 <input type="number" min="1" class="quantity" name="soluong" value="<?php echo $each['quantity']?>" />
-                                <input type="hidden" name="product_id" value="<?php echo $id?>" />
                                 <a href="./inc/giohang/update_quantity_in_cart.php?id=<?php echo $id ?>&type=incre">
                                     <i class="fa fa-plus"></i>
                                 </a>
@@ -88,7 +87,8 @@
                     </tbody>
                 </table>
                    
-                <form action="./inc/giohang/xuly.php" method="post">  
+                <form action="./inc/giohang/process_checkout.php" method="post"> 
+                <input type="hidden" name="total" value="<?php echo $total ?>"> 
                 <div class="add__danhmuc" style="margin: 20px 0; background-color: #fff; padding: 10px 20px; border-radius: 4px;">
                     <div class="panel panel-primary">                      
                         <div class="panel-heading" style="margin: 30px 0; color: #ee4d2d; text-transform: capitalize;">
