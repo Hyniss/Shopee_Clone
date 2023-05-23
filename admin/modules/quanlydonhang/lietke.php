@@ -1,15 +1,13 @@
 <?php
-    $id = $_SESSION['idnguoidung'];
     $sql_lietke_donhang = " SELECT orders.id,fullName,orderDate,orderStatus,total FROM orders,user
-                            WHERE  orders.userId = user.id
-                            AND userId = '$id' " ;
+                            WHERE  orders.userId = user.id" ;
     $query_lietke_donhang = mysqli_query($conn,$sql_lietke_donhang);
 ?>
 
 <div class="danhmuc " style=" width:86%;border-radius:4px; padding :20px 10px ;margin:20px auto ;background-color:#fff">
-    <div class="danhmuc_text" style = "font-size:2rem;font-weight:500 ;color: #ee4d2d;padding-bottom: 20px;">
-        Hiển Thị Lịch Sử Mua Hàng  
-    </div>
+    <span class="danhmuc_text" style = "font-size:2rem;font-weight:500 ;color: #ee4d2d;">
+        Hiển Thị Danh Sách Đơn Hàng   
+    </span>
     <table class = "table table-bordered" style = "text-align: center;font-size:1.6rem">
         <thead>
             <tr style = "text-transform: capitalize;">
@@ -49,7 +47,7 @@
                     ?>
                 </td>
                 <td>
-                    <a href="?quanly=quanlythongtincanhan&query=chitiet&madonhang=<?php echo $row_donhang['id'] ?>">
+                    <a href="?action=quanlydonhang&query=chitiet&madonhang=<?php echo $row_donhang['id'] ?>">
                         <button class="btn btn-primary">Chi tiết</button>
                     </a>
                 </td>                      

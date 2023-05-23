@@ -7,7 +7,7 @@ if (isset($_GET['login'])) {
 }
 if ($dangxuat == 'dangxuat') {
     unset($_SESSION['idnguoidung']);
-    unset($_SESSION['nguoidung']);
+    unset($_SESSION['dangnhap']);
     header('Location:index.php');
 }
 ?>

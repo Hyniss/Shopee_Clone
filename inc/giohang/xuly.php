@@ -7,7 +7,6 @@
         $color= $_POST['mausac'];
         $quantity = $_POST['soluong'];
         $price = $_POST['gia'];
-        $sum_price = $_POST['quantity'];
     
     if(empty($_SESSION['cart'][$id])){
     $_SESSION['cart'][$id]['name'] = $name;
@@ -18,7 +17,6 @@
     } else {
     $_SESSION['cart'][$id]['quantity']+= $quantity;
     }
-
     if (isset($_POST['themgiohang']) )
     {
 
